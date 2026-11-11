@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><script src="https://myhub.ia.br/canvas-vendor/tailwind.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Para Rebeca 💖</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    font-family:"Segoe UI",Tahoma,Verdana,sans-serif;
+    min-height:100dvh;
+    background:linear-gradient(160deg,#ffd1e3 0%,#ffe6f1 45%,#e9d5ff 100%);
+    display:flex;align-items:center;justify-content:center;
+    padding:16px;overflow:hidden;position:relative;color:#4a2040;
+  }
+  .heart{position:fixed;bottom:-40px;font-size:20px;opacity:.55;animation:rise linear forwards;pointer-events:none;z-index:0}
+  @keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+
+  .win{
+    position:relative;z-index:1;width:min(100%,430px);max-height:94dvh;
+    display:flex;flex-direction:column;
+    background:#fff;border-radius:12px;overflow:hidden;
+    border:2px solid #f48fb9;
+    box-shadow:0 14px 40px rgba(190,60,120,.35),0 0 0 4px rgba(255,255,255,.5);
+    animation:pop .45s cubic-bezier(.2,1.3,.4,1);
+  }
+  .win.out{animation:out .25s ease forwards}
+  .win.shake{animation:shake .4s}
+  @keyframes pop{from{transform:scale(.7) translateY(20px);opacity:0}to{transform:none;opacity:1}}
+  @keyframes out{to{transform:scale(.9);opacity:0}}
+  @keyframes shake{25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-5px)}}
+
+  .title{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    background:linear-gradient(90deg,#ec4899,#f472b6);color:#fff;
+    padding:8px 8px 8px 12px;font-size:14px;font-weight:600;flex-shrink:0;
+  }
+  .title span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .x{
+    width:32px;height:26px;border:none;border-radius:6px;background:rgba(255,255,255,.25);
+    color:#fff;font-size:16px;font-weight:700;cursor:pointer;flex-shrink:0;
+  }
+  .x:active{background:#e11d48}
+
+  .body{padding:20px 18px 8px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .body h2{font-size:19px;line-height:1.3;color:#be185d;margin-bottom:10px}
+  .body p{font-size:16.5px;line-height:1.6;margin-bottom:12px}
+  .letter p{font-size:15.5px}
+  .big{font-size:42px;text-align:center;margin-bottom:6px}
+
+  .player{margin:14px 0 6px}
+  .player .song{font-size:13px;font-weight:600;color:#be185d;margin-bottom:6px}
+  .player iframe{display:block;width:100%;height:152px;border:0;border-radius:12px}
+
+  .ask{
+    display:flex;gap:12px;align-items:center;
+    padding:14px 18px;background:#fff0f7;border-top:1px solid #fbcfe8;margin-top:6px;
+  }
+  .ask .ico{font-size:30px;flex-shrink:0}
+  .ask .q{font-size:16px;font-weight:600;line-height:1.35}
+  .btns{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;
+    padding:12px 18px 18px;background:#fff0f7;flex-shrink:0;
+  }
+  .btn{
+    padding:14px 8px;font-size:17px;font-weight:600;font-family:inherit;
+    border:2px solid #ec4899;border-radius:10px;background:#fff;color:#be185d;cursor:pointer;
+    transition:transform .1s,background .15s;
+  }
+  .btn:first-child{background:#ec4899;color:#fff}
+  .btn:active{transform:scale(.95)}
+  .dots{display:flex;justify-content:center;gap:6px;padding:8px 0 0}
+  .dots i{width:8px;height:8px;border-radius:50%;background:#fbcfe8}
+  .dots i.on{background:#ec4899}
+  .ask-wrap{flex-shrink:0}
+  .sign{text-align:right;font-weight:600;color:#be185d}
+  .buque{display:flex;justify-content:center;margin:4px 0 10px}
+  .buque svg{max-width:100%;height:auto;overflow:visible}
+  .sway{transform-box:view-box;transform-origin:120px 222px;animation:sway 4s ease-in-out infinite alternate}
+  @keyframes sway{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+  .bl{
+    animation-name:bloom,breath;animation-duration:1s,3.2s;
+    animation-timing-function:cubic-bezier(.2,1.4,.4,1),ease-in-out;
+    animation-iteration-count:1,infinite;animation-direction:normal,alternate;
+    animation-fill-mode:both,none;
+    animation-delay:var(--d,0s),calc(var(--d,0s) + 1.2s);
+  }
+  @keyframes bloom{from{transform:scale(0) rotate(-50deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+  @keyframes breath{from{transform:scale(1)}to{transform:scale(1.07)}}
+  .tw{transform-box:fill-box;transform-origin:center;opacity:0;animation:tw 2.2s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:0;transform:scale(.3)}50%{opacity:1;transform:scale(1)}}
+  @media (prefers-reduced-motion:reduce){.sway,.bl,.tw{animation:none;opacity:1}}
+  .fotos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 12px}
+  .fotos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;border:3px solid #fbcfe8;box-shadow:0 4px 12px rgba(190,60,120,.25)}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+const NOME = "Rebeca Ganacin";
+const E = "https://open.spotify.com/embed/track/";
+const motivos = [
+  {t:"Você é quem eu conto pra tudo",
+   p:"Tudo mesmo. Quando eu tô triste, você vem e sempre me dá os melhores conselhos e me faz melhorar automaticamente. Parece que você sempre sabe exatamente o que falar, mesmo quando nem eu sei o que eu tô sentindo. Você me escuta de verdade, sem me julgar, e isso faz uma diferença enorme pra mim. Saber que eu tenho você pra desabafar me deixa muito mais leve.",
+   s:"The Neighbourhood – Sweater Weather", id:"2QjOHCTQ1Jl3zawyYOpxh6"},
+  {t:"Sua personalidade alegre",
+   p:"Você é uma menina muito alegre e quando eu tô com você eu esqueço de todos os meus problemas. Você me faz rir muito e eu amo o fato de sermos dois idiotas que pensam igual. Qualquer coisa boba vira motivo de risada quando a gente tá junto, e eu nem preciso me esforçar pra ser eu mesmo do seu lado. Essa alegria que você carrega deixa qualquer dia ruim bem melhor, e eu agradeço muito por isso.",
+   s:"Travis Scott – goosebumps", id:"6gBFPUFcJLzWGx4lenP6h2"},
+  {t:"Filha dedicada que ama a família",
+   p:"Que ama muito sua família. Pra mim é nítido o quanto você se esforça por eles. Dá pra ver no jeito que você fala da sua família que tudo o que você faz tem o coração envolvido. Você cuida, se preocupa e quer ver todo mundo bem, e isso mostra o tamanho do seu caráter. Qualquer pai e mãe teria muito orgulho de ter uma filha como você.",
+   s:"Frank Ocean – Godspeed", id:"34xTFwjPQ1dC6uJmleno7x"},
+  {t:"Como você ajuda quem você ama",
+   p:"Não importa quem seja, eu sei que se alguém precisa de você, você dá o seu máximo pra fazer a pessoa se sentir bem. E isso é muito fofo, o carinho que você demonstra com todo mundo. Você não espera nada em troca, só quer ver a pessoa bem. Eu já senti isso na pele várias vezes e nunca vou esquecer. Você faz o mundo ser um lugar melhor só por ser desse jeito.",
+   s:"Olivia Rodrigo – hope ur ok", id:"1zejeOnykpCoyVSit6Bwp3"},
+  {t:"Como você ama os animais",
+   p:"Você me disse uma vez que queria fazer veterinária, isso já diz muito. Mas a forma que você ama suas cachorrinhas é muito fofa de ver. O carinho, a paciência e o cuidado que você tem com elas mostram o quanto seu coração é grande. Ver você com elas me faz sorrir sem perceber, dá pra sentir que o amor é de verdade. Os animais têm muita sorte de ter você, e acho que você vai ser uma veterinária incrível se seguir esse sonho.",
+   s:"Lana Del Rey – Love", id:"2Kerz9H9IejzeIpjhDJoYG", fotos:true},
+  {t:"Você é perfeita só por ser você",
+   p:"Eu não sei explicar, mas você é uma das poucas pessoas que eu conheço que consegue transmitir o que você transmite. A paz de estar com você, a alegria, seu sorriso, sua risada é contagiante e seus olhinhos lindinhos. Quando eu olho pra você eu sinto paz e confiança, e olho com uma admiração muito grande por quem você é.",
+   s:"", id:"0YNtAadZvKBBEFARtfoCV8"},
+  {t:"Sua relação com Deus",
+   p:"Você é uma serva muito fiel a Ele e sua relação com Ele é de um pai e de um melhor amigo, alguém que você conta tudo. E isso é muito admirável de ver, a maneira que você se esforça pra estar mais perto Dele.",
+   s:"Lugar Secreto", id:"4D9IlElQlDZrIjvHnPDxbZ"}
+];
+const carta = [
+  "Espero que você tenha gostado, dei o meu melhor pra fazer isso. Nunca esqueça da menina incrível que você é, cheia da presença de Deus. Eu desejo do fundo do meu coração que todos os seus sonhos se realizem e desejo que esses 16 anos sejam incríveis.",
+  "Eu fiz com 7 motivos porque na Bíblia, frequentemente, o número 7 é associado à perfeição. E pra mim você chega muito perto de ser perfeita, Rebeca.",
+  "Eu te amo e conta comigo pra tudo."
+];
+
+const app = document.getElementById("app");
+let step = -1; // -1 intro, 0..6 motivos, 7 carta
+
+function dots(n){
+  let h='<div class="dots">';
+  for(let i=0;i<7;i++) h+=`<i class="${i<=n?'on':''}"></i>`;
+  return h+'</div>';
+}
+function buttons(){
+  return `<div class="btns"><button class="btn" data-next>Sim</button><button class="btn" data-next>Claro</button></div>`;
+}
+function player(m){
+  return `<div class="player">
+    ${m.s?`<div class="song">🎵 ${m.s}</div>`:''}
+    <iframe src="${E}${m.id}" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>`;
+}
+
+function fotos(m){
+  if(!m.fotos) return '';
+  return `<div class="fotos">
+    <img src="foto1.jpg" alt="Cachorrinha golden">
+    <img src="foto2.jpg" alt="Cachorrinha shih tzu">
+  </div>`;
+}
+
+function html(){
+  if(step===-1){
+    return `<div class="win">
+      <div class="title"><span>💖 Aviso</span><button class="x" data-x>✕</button></div>
+      <div class="body"><div class="big">💌</div></div>
+      <div class="ask-wrap"><div class="ask"><div class="ico">❓</div>
+        <div class="q">Deseja ver os motivos por que ${NOME} é a mulher mais perfeita do mundo?</div></div>
+      ${buttons()}</div></div>`;
+  }
+  if(step<7){
+    const m=motivos[step];
+    const q = step<6 ? `Deseja ver o motivo ${step+2}?` : `Deseja ver a carta final?`;
+    return `<div class="win">
+      <div class="title"><span>💗 Motivo ${step+1} de 7</span><button class="x" data-x>✕</button></div>
+      <div class="body"><h2>${step+1}. ${m.t}</h2><p>${m.p}</p>${fotos(m)}${player(m)}${dots(step)}</div>
+      <div class="ask-wrap"><div class="ask"><div class="ico">❓</div><div class="q">${q}</div></div>
+      ${buttons()}</div></div>`;
+  }
+  return `<div class="win">
+    <div class="title"><span>💝 Carta final</span><button class="x" data-x>✕</button></div>
+    <div class="body letter"><div class="big">🎀</div>
+      <h2>Feliz aniversário, Rebeca! 🎂</h2>
+      ${carta.map(c=>`<p>${c}</p>`).join("")}
+      <p class="sign">💖</p>
+      <div class="buque">
+      <svg viewBox="0 0 240 248" width="280" role="img" aria-label="Buquê de lírios azuis embrulhado">
+        <defs>
+          <linearGradient id="pet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b7d5ff"/><stop offset="1" stop-color="#2a56c9"/></linearGradient>
+          <linearGradient id="pet2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7aa6f2"/><stop offset="1" stop-color="#1e3fa0"/></linearGradient>
+          <path id="p" d="M0 0C-7-8-7-21 0-30C7-21 7-8 0 0Z"/>
+          <g id="lirio">
+            <g fill="url(#pet2)">
+              <use href="#p" transform="rotate(30)"/><use href="#p" transform="rotate(90)"/><use href="#p" transform="rotate(150)"/>
+              <use href="#p" transform="rotate(210)"/><use href="#p" transform="rotate(270)"/><use href="#p" transform="rotate(330)"/>
+            </g>
+            <g fill="url(#pet)">
+              <use href="#p"/><use href="#p" transform="rotate(60)"/><use href="#p" transform="rotate(120)"/>
+              <use href="#p" transform="rotate(180)"/><use href="#p" transform="rotate(240)"/><use href="#p" transform="rotate(300)"/>
+            </g>
+            <g stroke="#fff" stroke-opacity=".35" stroke-width=".8">
+              <path d="M0-3V-23"/><path d="M0 3V23"/>
+              <path d="M2.6-1.5L20-11"/><path d="M-2.6 1.5L-20 11"/>
+              <path d="M2.6 1.5L20 11"/><path d="M-2.6-1.5L-20-11"/>
+            </g>
+            <g stroke="#e8f0ff" stroke-width=".9"><path d="M0 0L-5-9M0 0L0-11M0 0L5-9"/></g>
+            <g fill="#fcd34d"><circle cx="-5" cy="-9" r="1.7"/><circle cx="0" cy="-11" r="1.7"/><circle cx="5" cy="-9" r="1.7"/></g>
+          </g>
+        </defs>
+
+        <g class="sway">
+          <defs>
+<linearGradient id="pap" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbcfe8"/><stop offset="1" stop-color="#f472b6"/></linearGradient>
+<linearGradient id="pap2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ddd6fe"/><stop offset="1" stop-color="#c4b5fd"/></linearGradient>
+<linearGradient id="rib" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a7ae8"/><stop offset="1" stop-color="#1e3fa0"/></linearGradient>
+<g id="gyp" fill="#ede9fe" stroke="#a78bfa" stroke-width=".6"><circle cx="0" cy="0" r="3"/><circle cx="-6" cy="3" r="2.4"/><circle cx="6" cy="3" r="2.4"/><circle cx="-4" cy="-5" r="2.2"/><circle cx="5" cy="-5" r="2.2"/><circle cx="0" cy="7" r="2"/><circle cx="-9" cy="-2" r="1.8"/><circle cx="9" cy="-1" r="1.8"/></g>
+</defs>
+<path d="M28 104Q120 134 212 104L126 226H114Z" fill="url(#pap2)"/>
+<g fill="none" stroke="#6bb57f" stroke-width="1.2" stroke-linecap="round">
+<path d="M120 212Q70 150 30 98"/><path d="M120 212Q60 130 40 62"/><path d="M120 212Q80 110 72 32"/><path d="M120 212Q108 100 104 18"/>
+<path d="M120 212Q132 100 138 18"/><path d="M120 212Q160 110 168 32"/><path d="M120 212Q180 130 200 62"/><path d="M120 212Q170 150 210 98"/>
+</g>
+<use href="#gyp" transform="translate(30 98)"/><use href="#gyp" transform="translate(40 62)"/><use href="#gyp" transform="translate(72 32)"/><use href="#gyp" transform="translate(104 18)"/>
+<use href="#gyp" transform="translate(138 18)"/><use href="#gyp" transform="translate(168 32)"/><use href="#gyp" transform="translate(200 62)"/><use href="#gyp" transform="translate(210 98)"/>
+<g fill="none" stroke="#3f8f4f" stroke-width="3" stroke-linecap="round">
+            <path d="M120 222Q120 130 120 56"/>
+            <path d="M120 222Q95 150 62 92"/>
+            <path d="M120 222Q145 150 178 92"/>
+            <path d="M120 222Q105 175 88 130"/>
+            <path d="M120 222Q135 175 152 130"/>
+          </g>
+          <path d="M120 175Q76 165 52 135Q92 135 120 175Z" fill="#4caf68"/>
+          <path d="M120 175Q164 165 188 135Q148 135 120 175Z" fill="#43a05e"/>
+          <path d="M120 195Q90 200 70 188Q98 178 120 195Z" fill="#5cbf78"/>
+          <path d="M120 195Q150 200 170 188Q142 178 120 195Z" fill="#5cbf78"/>
+
+          <g transform="translate(88 130)"><g class="bl" style="--d:.5s"><use href="#lirio" transform="scale(.8)"/></g></g>
+          <g transform="translate(152 130)"><g class="bl" style="--d:.7s"><use href="#lirio" transform="scale(.8)"/></g></g>
+          <g transform="translate(62 92)"><g class="bl" style="--d:.3s"><use href="#lirio" transform="scale(.9)"/></g></g>
+          <g transform="translate(178 92)"><g class="bl" style="--d:.4s"><use href="#lirio" transform="scale(.9)"/></g></g>
+          <g transform="translate(120 56)"><g class="bl" style="--d:.1s"><use href="#lirio"/></g></g>
+<path d="M120 110V190" stroke="#3f8f4f" stroke-width="3" stroke-linecap="round"/>
+<g transform="translate(120 100)"><g class="bl" style="--d:.9s"><use href="#lirio" transform="scale(.85)"/></g></g>
+
+          <path d="M50 126Q120 170 190 126L126 227Q120 231 114 227Z" fill="url(#pap)"/>
+<path d="M60 134Q96 196 116 224M180 134Q144 196 124 224M120 152V224" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.4"/>
+<path d="M50 126Q120 170 190 126" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2"/>
+<g fill="#fff" fill-opacity=".6"><circle cx="96" cy="170" r="2"/><circle cx="144" cy="172" r="2"/><circle cx="108" cy="208" r="1.6"/><circle cx="134" cy="206" r="1.6"/><circle cx="78" cy="150" r="1.6"/><circle cx="162" cy="150" r="1.6"/></g>
+<path d="M89 186Q120 200 151 186L152 195Q120 209 88 195Z" fill="url(#rib)"/>
+          <path d="M116 197L124 200C120 214 112 230 106 244L100 234L88 240C96 222 108 208 116 197Z" fill="#1e3fa0"/>
+<path d="M124 197L116 200C120 214 128 230 134 244L140 234L152 240C144 222 132 208 124 197Z" fill="#2a56c9"/>
+          <path d="M120 193C92 164 62 184 74 200C86 214 112 206 120 193Z" fill="#2a56c9"/>
+<path d="M117 194C98 182 84 190 84 198" fill="none" stroke="#a9c3f7" stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M120 193C148 164 178 184 166 200C154 214 128 206 120 193Z" fill="#3b6fe0"/>
+<path d="M123 194C142 182 156 190 156 198" fill="none" stroke="#a9c3f7" stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="120" cy="194" rx="7" ry="6" fill="#1e3fa0"/>
+<ellipse cx="118" cy="192" rx="3" ry="2" fill="#a9c3f7" fill-opacity=".6"/>
+        </g>
+
+        <g fill="#fbbf24">
+          <g transform="translate(30 50)"><path class="tw" style="animation-delay:.2s" d="M0-6L1.5-1.5L6 0L1.5 1.5L0 6L-1.5 1.5L-6 0L-1.5-1.5Z"/></g>
+          <g transform="translate(210 40)"><path class="tw" style="animation-delay:.9s" d="M0-6L1.5-1.5L6 0L1.5 1.5L0 6L-1.5 1.5L-6 0L-1.5-1.5Z"/></g>
+          <g transform="translate(215 125)"><path class="tw" style="animation-delay:1.5s" d="M0-6L1.5-1.5L6 0L1.5 1.5L0 6L-1.5 1.5L-6 0L-1.5-1.5Z"/></g>
+          <g transform="translate(22 135)"><path class="tw" style="animation-delay:.6s" d="M0-6L1.5-1.5L6 0L1.5 1.5L0 6L-1.5 1.5L-6 0L-1.5-1.5Z"/></g>
+          <g transform="translate(120 12)"><path class="tw" style="animation-delay:1.1s" d="M0-6L1.5-1.5L6 0L1.5 1.5L0 6L-1.5 1.5L-6 0L-1.5-1.5Z"/></g>
+        </g>
+      </svg>
+      </div></div></div>`;
+}
+
+function render(){
+  app.innerHTML = html();
+  const w = app.firstElementChild;
+  w.querySelectorAll("[data-next]").forEach(b=>b.onclick=()=>{
+    w.classList.add("out");
+    setTimeout(()=>{step++;render();confetti(6)},250);
+  });
+  const x = w.querySelector("[data-x]");
+  x.onclick=()=>{w.classList.remove("shake");void w.offsetWidth;w.classList.add("shake")};
+}
+
+function heart(){
+  const h=document.createElement("div");
+  h.className="heart";
+  h.textContent=["💖","💕","🌸","💗","✨"][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(14+Math.random()*22)+"px";
+  h.style.animationDuration=(6+Math.random()*6)+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),12500);
+}
+function confetti(n){for(let i=0;i<n;i++)setTimeout(heart,i*120)}
+
+setInterval(heart,900);
+confetti(8);
+render();
+</script>
+</body>
+</html>
